@@ -21,4 +21,10 @@ When deployed on Tomcat the root context is:
 
 convex-hull
 
+For a demonstration of the Graham Scan algorithm please visit these repositories:
+
+https://github.com/dubersfeld/graham-step
+
+https://github.com/dubersfeld/graham-anim
+
 Dominique Ubersfeld, Cachan, France
