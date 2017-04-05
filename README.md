@@ -1,4 +1,4 @@
-# jarvis-step-
+# jarvis-step
 Java based step-by-step demonstration of the Jarvis Step algorithm applied to build the convex hull of a points distribution
 
 I present here a Java based demonstration of the Jarvis March algorithm that is used to find the convex hull of a random points distribution.
