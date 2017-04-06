@@ -122,7 +122,6 @@ public class PointDist implements Serializable {
 	
 	public void scanStep() {
 		
-		System.out.println("scanStep begin");
 		int i0; 
 		int cp;
 		
@@ -130,8 +129,6 @@ public class PointDist implements Serializable {
 		  
 		Point vCurr = points[curr];
 		Point pref = new Point(-1, 0, 0);
-		
-		System.out.println("vCurr " + vCurr.getIndex());
 		
 		int distCurr, distMax;
 		
@@ -146,7 +143,7 @@ public class PointDist implements Serializable {
 	    pref.setYpos(vCurr.getYpos());//.yPos = Vcurr.yPos;
 		
 	    if (ind == points.length) {// begin a new vertex search
-	    	System.out.println("begin new vertex");
+	    
 	    	if (convexHull.size() == 1) {// first vertex search
 	    		i0 = (curr == 0) ? 1 : 0;
 			    cand.clear();
@@ -171,12 +168,9 @@ public class PointDist implements Serializable {
 	    	}// if
 	    	ind = 0;// reset
 	    } else {
-	    	System.out.println("iterate on same vertex");
 	    	 
 	    	i0 = cand.get(cand.size()-1);    
 	    	if (ind != i0 && ind != curr) {
-	    		System.out.println("drawSegment " + points[curr].getIndex() 
-	    											+ " " + points[ind].getIndex());
 		                 	          
 	    		if (convexHull.size() == 1 || cross(pref, points[ind], vCurr, vCurr) > 0) {
 		            cp = cross(points[i0], points[ind], vCurr, vCurr);      
@@ -195,7 +189,7 @@ public class PointDist implements Serializable {
 	    if (ind < points.length) {// more candidates to test      
 	    	return;// next step
 	    } else if (ind == N && (curr != first || convexHull.size() == 1)) {// find next vertex
-	    	System.out.println("sator");
+	   
 	    	// find farthest candidate
 	    	index = cand.get(0);
 		    distMax = distance(points[index], vCurr);
@@ -214,19 +208,19 @@ public class PointDist implements Serializable {
 		        convexHull.add(points[next]);		    
 		        curr = next;
 		              
-		        System.out.println("tenet " + curr);
+		       
 		      
 		        newVertexFound = true;
 		        return;// next step
 		    } else {
-		        System.out.println("opera");
+		       
 		        finished = true;           
 		    }// if        
   
-		    System.out.println("arepo " + next);
+		    
 	    }// if
 	    		
-		System.out.println("scanStep completed");
+	
 	}
 
 	/** change method name later */

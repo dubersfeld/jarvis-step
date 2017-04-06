@@ -59,23 +59,18 @@ public class ConvexHullController {
 	public StepResult scanStep(@RequestBody SearchRequest message, 
 														HttpServletRequest request) 
 	{	
-		System.out.println("controller: scanStep begin");
 		StepResult result = new StepResult();
 			
 		// retrieve graph from session context
 		HttpSession session = request.getSession();
 		PointDist pointDist = (PointDist)session.getAttribute("points");
-		
-		System.out.println("controller: scanStep sator");
-		
+			
 		pointDist.displayCH();
 		
 		pointDist.scanStep();// actual scan step
 			
 		JSONSnapshot snapshot = chServices.PointsToJSON(pointDist);
-		
-		System.out.println("controller: scanStep arepo");
-		
+				
 		result.setSnapshot(snapshot);
 		
 		if (pointDist.isFinished()) {
@@ -88,8 +83,6 @@ public class ConvexHullController {
 		
 		snapshot.display();
 	
-		
-		System.out.println("controller: scanStep return");
 		return result;
 	}
 	

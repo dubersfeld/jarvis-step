@@ -241,8 +241,7 @@ function canvasApp() {
 
   
   	function jarvisMarchStep() {
-	  	console.log("fucking jarvisStep");
-	  
+	  	
 	  	var message = {"type":"STEP"};
 	  
 	  	$.ajax({
@@ -257,9 +256,6 @@ function canvasApp() {
 				
 				if (data["status"] == "STEP" || data["status"] == "FINISHED" 
 												|| data["status"] == "REDRAW") {
-					
-					console.log("jackpot");
-					
 					result = data["snapshot"];
 					
 					var currentVertex = result["currentVertex"];
@@ -270,13 +266,8 @@ function canvasApp() {
 					}
 					
 					if (data["status"] == "STEP") {
-						console.log("current vertex " + currentVertex);
-				
-						console.log("candidate " + cand);
 						drawSegment(points[currentVertex], points[cand], "green");
-					} else if (data["status"] == "REDRAW") {
-						console.log("newFoundVertex " + currentVertex);
-			
+					} else if (data["status"] == "REDRAW") {			
 						S.push(points[currentVertex]);
 						redraw(points, S);
 		
