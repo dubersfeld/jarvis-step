@@ -1,7 +1,7 @@
 # jarvis-step
-Java based step-by-step demonstration of the Jarvis Step algorithm applied to build the convex hull of a points distribution
+I present here a Java based step-by-step demonstration of the Jarvis Step algorithm applied to build the convex hull of a points distribution.
 
-I present here a Java based demonstration of the Jarvis March algorithm that is used to find the convex hull of a random points distribution.
+Only a recent Maven version is required to run this application (I used 3.6.0).
 
 Javascript is used for display and initialization only. Here are the implementation details:
 
@@ -17,9 +17,15 @@ The partial result is used to update the display.
 
 This implementation does not use any explicit angle. No trigonometric functions are used. Instead a cross product is used for all angle comparisons.
 
-When deployed on Tomcat the root context is:
+To launch the demo run the command:
+```
+mvn spring-boot:run
+```
+When the application has started hit the browser on url `localhost:8080/convex-hull`
 
-convex-hull
+Here is a screen shot of a step:
+
+![alt text](images/jarvisStep.png "Jarvis Step")
 
 For a demonstration of the Graham Scan algorithm please visit these repositories:
 
