@@ -21,7 +21,7 @@ To launch the demo run the command:
 ```
 mvn spring-boot:run
 ```
-When the application has started hit the browser on url `localhost:8080/convex-hull`
+When the application has started open a browser and hit url `localhost:8080/convex-hull`
 
 Here is a screen shot of a step:
 
